@@ -13,8 +13,8 @@
 /* Recusive function style:     */ 
 /********************************/
 
-function replaceHoleR1(a) { return a.length?Array(0 in a?a[0]:'/*<empty>*/').concat(replaceEmpty(a.slice(1)):[]; }
-function replaceHoleR2(a,s='/*<empty>*/') { return a.length?[0 in a?a[0]:s, ...replaceEmpty(a.slice(1))]:[]; }
+function replaceHoleR1(a) { return a.length?Array(0 in a?a[0]:'/*<empty>*/').concat(replaceHole(a.slice(1)):[]; }
+function replaceHoleR2(a,s='/*<empty>*/') { return a.length?[0 in a?a[0]:s, ...replaceHole(a.slice(1))]:[]; }
 
 
 /********************************/
