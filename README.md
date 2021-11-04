@@ -13,27 +13,27 @@ Javascript holes in array, how to iterate, detect, and replace
 Javascript array can have holes, eg:
 ```JavaScript
 arrayA=['a',,'c']
-arrayA.length` => 3
+arrayA.length => 3
 ```
 Normal array without hole:
 ```JavaScript
 arrayB=['a',undefined,'c']
-arrayB.length` => 3
+arrayB.length => 3
 ```
 Something to think about:
 ```JavaScript
 [].length` => 0
-[undefined].length` => 1
+[undefined].length => 1
 ```
-(NOTE: *undefine* is declared as data with a special value)
+(NOTE: *undefine* is declared as data and takes up storage space that's why the length is 1)
 
 Without investigation, one might think that the second item (index:1) of arrayA is `undefined`.\
 Let's check:\
 ```JavaScript
 typeof arrayA[1] => "undefined"
-arrayA[1] === undefined` => true
-typeof arrayB[1]` => `"undefined"
-arrayB[1] === undefined` => true
+arrayA[1] === undefined => true
+typeof arrayB[1] => "undefined"
+arrayB[1] === undefined => true
 ```
 
 However, there are subtle differences between the above array and arrayB.\
