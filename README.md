@@ -78,12 +78,16 @@ function replaceHole(a,s='/*<empty>*/') { return Array(a.length).fill().map((_,k
 function replaceHole(a,s='/*<empty>*/') { return [...new Array(a.length)].map((_,k)=>k in a?a[k]:s); }
 ```
 
-### Classic loop function style:\
+### Classic loop function style:
 ```JavaScript
 function replaceHole(a) {
         b=a.map(v => true);
         for(var i=0;i<a.length;i++) {
-                if(!b[i]) { b[i]='/*<empty>*/';}
+                if(b[i]) { 
+                          b[i]=a[i]; 
+                } else {
+                          b[i]='/*<empty>*/';
+                }
         }
         return b;
 }
@@ -102,7 +106,17 @@ function replaceHole(a) {
 }
 ```
 
+## Example usage:
+```JavaScript
 
+arrayA=['a',,'b'] => Array(3) [ "a", <1 empty slot>, "b" ]
+arrayResult=replaceHole(arrayA) => Array(3) [ "a", "/*<empty>*/", "b" ]
+
+replaceHole(['a',undefined,,,'b']) => Array(5) [ "a", undefined, "/*<empty>*/", "/*<empty>*/", "b" ]
+
+replaceHole([,]) => Array [ "/*<empty>*/" ]
+```
+**NOTE: a comma ',' followed at the end of array declaration does not create additional item after the comma**
 
 (c) Ram Narula You can use this information, kindly do give credit: github rambkk - Ram Narula - pluslab.net  
 Please drop a line to say hello and let me know what kind of project you are working on 😄
