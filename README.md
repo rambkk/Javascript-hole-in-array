@@ -1,7 +1,7 @@
 # Javascript-hole-in-array
 Javascript holes in array, how to iterate, detect, and replace
 
-**rambkk - pluslab.net - looking for impossible projects**
+**rambkk - [pluslab.net](https://pluslab.net/blog/) - looking for impossible projects**
 ### ((Just fun things to think about. Do drop a line to say hello and let me know what kind of project you are working on, or if help is needed))
 
 Javascript array can have holes, eg:\
