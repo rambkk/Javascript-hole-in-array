@@ -28,7 +28,7 @@ Something to think about:
 (NOTE: *undefine* is declared as data and takes up storage space that's why the length is 1)
 
 Without investigation, one might think that the second item (index:1) of arrayA is `undefined`.\
-Let's check:\
+Let's check:
 ```JavaScript
 typeof arrayA[1] => "undefined"
 arrayA[1] === undefined => true
@@ -36,7 +36,7 @@ typeof arrayB[1] => "undefined"
 arrayB[1] === undefined => true
 ```
 
-However, there are subtle differences between the above array and arrayB.\
+However, there are subtle differences between the above array and arrayB.
 ```JavaScript
 Object.values(arrayA) => Array [ 0, 2 ]
 Object.keys(arrayA) => Array [ "a", "c" ]
@@ -63,6 +63,7 @@ eg:
 1 in arrayB => true
 ```
 
+## Replacing holes with string /*<empty*/
 Here are some codes to replace all holes with a certain string (also in the files section).
 
 ### Recursive function style:
@@ -117,6 +118,26 @@ replaceHole(['a',undefined,,,'b']) => Array(5) [ "a", undefined, "/*<empty>*/", 
 replaceHole([,]) => Array [ "/*<empty>*/" ]
 ```
 **NOTE: a comma ',' followed at the end of array declaration does not create additional item after the comma**
+
+## Removing an item from array and creating a hole
+This could be done with `delete` command, eg:
+
+```JavaScript
+arrayTest=['a','b','c'];
+0 in arrayTest => true
+1 in arrayTest => true
+2 in arrayTest => true
+delete arrayTest[1]
+0 in arrayTest => true
+1 in arrayTest => false
+2 in arrayTest => true
+```
+
+Value of arrayTest becomes:
+```
+Array(3) [ "a", <1 empty slot>, "c" ]
+```
+
 
 (c) Ram Narula You can use this information, kindly do give credit: github rambkk - Ram Narula - pluslab.net  
 Please drop a line to say hello and let me know what kind of project you are working on 😄
