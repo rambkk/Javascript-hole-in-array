@@ -66,7 +66,7 @@ eg:
 ## Replacing holes with something else
 Here are some codes to fill all holes with data (also in the files section).
 
-Usage:
+Syntax:
 ```JavaAscript
 replaceHole(ARRAY,replacement [default: undefined])
 ```
@@ -81,7 +81,7 @@ function replaceHole(a,s) { return a.length?[0 in a?a[0]:s, ...replaceHole(a.sli
 
 ### Iteration function style:
 ```JavaScript
-function replaceHole(a,s) { return Array(a.length+1).join('0').split('').map((_,k)=>k in a?a[k]:'/*<empty>*/'); }
+function replaceHole(a,s) { return Array(a.length+1).join('0').split('').map((_,k)=>k in a?a[k]:s); }
 function replaceHole(a,s) { return Array(a.length).fill().map((_,k)=>k in a?a[k]:s); }
 function replaceHole(a,s) { return [...new Array(a.length)].map((_,k)=>k in a?a[k]:s); }
 ```
