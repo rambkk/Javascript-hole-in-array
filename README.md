@@ -1,5 +1,5 @@
 # Javascript-hole-in-array
-Javascript holes in array, how to iterate, detect, replace, and delete
+Javascript holes in array or array with holes, how to iterate, detect, replace, and delete
 
 ```JavaScript
   
