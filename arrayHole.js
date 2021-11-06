@@ -1,4 +1,5 @@
 /* Javascript arrayHole
+ * Javascript holes in array or array with holes, how to iterate, detect, replace, and delete
  * using ideas from https://github.com/rambkk/Javascript-hole-in-array
  *
  * arrayHole (version 0.11 - initial release)
@@ -9,12 +10,18 @@
  *
  * The data to be used for replacement can be passed as the second parameter. 
  * If replacement is not specified, undefined will be used.
+ * Returns a new array with replaced items.
  * 
  * Requirement: might require Javascript ES6
  * 
  * (c) Ram Narula You can use this information, kindly do give credit: github rambkk - Ram Narula - pluslab.net
  * Please drop a line to say hello and let me know what kind of project you are working on :-)
- */
+ *
+ *  
+ * ['a',,'c'] is NOT SAME as ['a',undefined,'c']
+ *
+ * rambkk - pluslab.net - looking for impossible projects
+*/
 
 /********************************/
 /* Recusive function style:     */ 
