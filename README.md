@@ -44,7 +44,7 @@ Object.keys(arrayA) // Array [ "a", "c" ]
 Object.keys(arrayB) // Array(3) [ "a", "b", "c" ]
 Object.values(arrayB) // Array(3) [ "a", undefined, "c" ]
 ```
-NOTE: Seems like Javascript internally deals with array with holes differently at least in Firefox browser
+NOTE: Seems like Javascript internally deals with array with holes differently at least in Gecko 20100101 based browser
 
 ### Possible problem:
 Working with array with holes could be problematic especially when performing array iterations.\
