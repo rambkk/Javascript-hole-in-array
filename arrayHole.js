@@ -27,7 +27,7 @@
 /* Recusive function style:     */ 
 /********************************/
 
-function replaceHole(a,s) { return a.length?Array(0 in a?a[0]:x).concat(replaceHole(a.slice(1),s):[]; }
+function replaceHole(a,s) { return a.length?Array(0 in a?a[0]:s).concat(replaceHole(a.slice(1),s)):[]; }
 function replaceHole(a,s) { return a.length?[0 in a?a[0]:s, ...replaceHole(a.slice(1),s)]:[]; }
 
 
